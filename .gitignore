@@ -6,8 +6,7 @@
 # netbeans
 /nbproject
 
-# we use maven!
-/build.xml
+# we use ANT!
 /target
 
 # vim
