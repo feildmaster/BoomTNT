@@ -10,21 +10,21 @@
 <project name="BoomTNT" default="default" basedir=".">
     <description>Builds, tests, and runs the project BoomTNT.</description>
     
-	<!-- Adding Properties -->
-	<property name="src.dir" value="src" />
-	<property name="test.src.dir" value="test" />
-	<property name="build.dir" value="build" />
-	<property name="dist.dir" value="dist" />
-	<property name="build.classes.dir" value="${build.dir}/classes" />
-	<property name="dist.javadoc.dir" value="${build.dir}/javadocs" />
-	<property name="build.test.classes.dir" value="${build.dir}/test/classes" />
-	<property name="build.test.results.dir" value="${build.dir}/test/results" />
-	<property name="build.classes.excludes" value="**/*.java,**/*.form" />
-	<property name="dist.jar" value="${dist.dir}/${ant.project.name}.jar" />
+    <!-- Adding Properties -->
+    <property name="src.dir" value="src" />
+    <property name="test.src.dir" value="test" />
+    <property name="build.dir" value="build" />
+    <property name="dist.dir" value="dist" />
+    <property name="build.classes.dir" value="${build.dir}/classes" />
+    <property name="dist.javadoc.dir" value="${build.dir}/javadocs" />
+    <property name="build.test.classes.dir" value="${build.dir}/test/classes" />
+    <property name="build.test.results.dir" value="${build.dir}/test/results" />
+    <property name="build.classes.excludes" value="**/*.java,**/*.form" />
+    <property name="dist.jar" value="${dist.dir}/${ant.project.name}.jar" />
 	
     <!-- Java Crap -->
-	<property name="javac.target" value="1.6" />
-    <property name="javac.source" value="${src.dir}/*" />
+    <property name="javac.target" value="1.6" />
+    <property name="javac.source" value="${build.classes.dir}/*" />
     
     <import file="nbproject/build-impl.xml"/>
     <!--
