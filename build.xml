@@ -10,6 +10,8 @@
 <project name="BoomTNT" default="default" basedir=".">
     <description>Builds, tests, and runs the project BoomTNT.</description>
     
+    <property environment="env"/>
+    
     <!-- Adding Properties -->
     <property name="src.dir" value="src" />
     <property name="test.src.dir" value="test" />
@@ -24,7 +26,7 @@
 	
     <!-- Java Crap -->
     <property name="javac.target" value="1.6" />
-    <property name="javac.source" value="${build.classes.dir}/*" />
+    <property name="javac.source" value="${env.WORKSPACE}/${build.classes.dir}/*" />
     
     <import file="nbproject/build-impl.xml"/>
     <!--
