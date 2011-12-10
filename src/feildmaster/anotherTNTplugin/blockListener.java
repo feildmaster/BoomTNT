@@ -12,7 +12,7 @@ class blockListener extends BlockListener {
 
         Block block = event.getBlock();
         if(block.getType() == Material.TNT) {
-            if(Math.random() <= 0.9) {
+            if(Math.random() < 0.9) {
                 //event.getPlayer().getServer().broadcastMessage(event.getPlayer().getDisplayName()+" messed up when setting up TNT!");
                 event.getPlayer().sendMessage("You messed up when setting TNT!");
                 block.setType(Material.AIR);
