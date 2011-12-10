@@ -12,6 +12,7 @@
 	
 	<!-- Adding Properties -->
 	<property name="src.dir" value="src" />
+	<property name="test.src.dir" value="test" />
 	
     <import file="nbproject/build-impl.xml"/>
     <!--
