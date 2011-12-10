@@ -4,8 +4,8 @@
 /.settings
 
 # netbeans
-/nbproject
-!/nbproject/build-impl.xml
+nbproject/*
+!build-impl.xml
 
 # we use ANT!
 /target
