@@ -10,6 +10,8 @@
 <project name="BoomTNT" default="default" basedir=".">
     <description>Builds, tests, and runs the project BoomTNT.</description>
 	
+	<property name="javac.target" value="1.6" />
+
 	<!-- Adding Properties -->
 	<property name="src.dir" value="src" />
 	<property name="test.src.dir" value="test" />
