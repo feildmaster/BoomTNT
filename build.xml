@@ -9,6 +9,10 @@
 <!-- in the project's Project Properties dialog box.-->
 <project name="BoomTNT" default="default" basedir=".">
     <description>Builds, tests, and runs the project BoomTNT.</description>
+	
+	<!-- Adding Properties -->
+	<property name="src.dir" value="src" />
+	
     <import file="nbproject/build-impl.xml"/>
     <!--
 
