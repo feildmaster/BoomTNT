@@ -11,6 +11,7 @@
     <description>Builds, tests, and runs the project BoomTNT.</description>
     
     <property environment="env"/>
+    <!-- ${env.WORKSPACE} -->
     
     <!-- Adding Properties -->
     <property name="src.dir" value="src" />
@@ -23,10 +24,14 @@
     <property name="build.test.results.dir" value="${build.dir}/test/results" />
     <property name="build.classes.excludes" value="**/*.java,**/*.form" />
     <property name="dist.jar" value="${dist.dir}/${ant.project.name}.jar" />
+    
+    <property name="build.generated.sources.dir" value="#{build.dir}/generated-sources" />
 	
     <!-- Java Crap -->
+    <!--
     <property name="javac.target" value="1.6" />
-    <property name="javac.source" value="${env.WORKSPACE}/${build.classes.dir}" />
+    <property name="javac.source" value="" />
+    -->
     
     <import file="nbproject/build-impl.xml"/>
     <!--
