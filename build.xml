@@ -19,13 +19,9 @@
 
     <target name="compile" description="Compilation target">
         <echo>Compiling</echo>
-        <javac srcdir="${src}" destdir="${build}" classpathref="classpath" includeantruntime="false">
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false">
                 <compilerarg value="-Xlint"/>
         </javac>
-        <copy file="src/plugin.yml" tofile="bin/plugin.yml" />
-        <copy todir="bin/props">
-                <fileset dir="src/props" />
-        </copy>
     </target>
 
     <target name="build">
