@@ -25,13 +25,10 @@
     </target>
 
     <target name="build">
-        <copy todir="${build}/classes">
-            <fileset dir="${src}" excludes="**/*.java,**/*.form" includes="**"/>
-        </copy>
-
         <echo>Building</echo>
         <jar compress="true" jarfile="${dist}/${ant.project.name}.jar"
-        index="false" includes="${build}/classes"></jar>
+        index="false" includes="${build}, ${lib}">
+        </jar>
     </target>
 
     <!--<import file="nbproject/build-impl.xml"/>-->
