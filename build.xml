@@ -13,6 +13,8 @@
         <echo>Cleaning</echo>
         <delete dir="${build}"/>
         <delete dir="${dist}"/>
+
+        <mkdir dir="${build}"/>
     </target>
 
     <target name="compile" description="Compilation target">
@@ -27,7 +29,6 @@
     </target>
 
     <target name="build">
-        <mkdir dir="${build}"/>
         <copy todir="${build}/classes">
             <fileset dir="${src}" excludes="**/*.java,**/*.form" includes="**"/>
         </copy>
