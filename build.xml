@@ -33,6 +33,6 @@
             <fileset dir="${src}" excludes="**/*.java,**/*.form" includes="**"/>
         </copy>
 
-        <jar compress="true" jarfile="${dist}/${ant.project.name}.jar" index="false" includes="${build}"></jar>
+        <jar compress="true" jarfile="${dist}/${ant.project.name}.jar" index="false" includes="${build}/classes/*"></jar>
     </target>
 </project>
