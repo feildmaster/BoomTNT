@@ -6,8 +6,8 @@
 # netbeans
 nbbuild.xml
 nbproject/*
-!build-impl.xml
-!project.properties
+lib/*
+!/*.jar
 
 # we use ANT!
 /target
