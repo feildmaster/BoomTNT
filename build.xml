@@ -29,10 +29,10 @@
 
     <target name="build">
         <echo>Building</echo>
-        <copy todir="${build}/classes">
+        <copy todir="${build}">
             <fileset dir="${src}" excludes="**/*.java,**/*.form" includes="**"/>
         </copy>
 
-        <jar compress="true" jarfile="${dist}/${ant.project.name}.jar" index="false" includes="${build}/classes/*"></jar>
+        <jar compress="true" jarfile="${dist}/${ant.project.name}.jar" index="false" includes="${build}/**"></jar>
     </target>
 </project>
