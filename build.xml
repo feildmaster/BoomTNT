@@ -19,7 +19,7 @@
 
     <target name="compile" depends="clean">
         <echo>Compiling</echo>
-        <javac srcdir="${src}" destdir="${build}" classpathref="classpath" />
+        <javac srcdir="${src}" destdir="${build}" includeantruntime="false" classpathref="classpath" />
     </target>
 
     <target name="build" depends="compile">
