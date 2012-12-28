@@ -7,8 +7,12 @@ import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class BoomPlugin extends JavaPlugin implements Listener {
+    private boolean damageBlocks;
+
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
+        reloadConfig();
+        damageBlocks = getConfig().getBoolean("damage-blocks");
     }
 
     @EventHandler(priority = EventPriority.LOWEST)
@@ -21,7 +25,7 @@ public class BoomPlugin extends JavaPlugin implements Listener {
                 event.getPlayer().sendMessage("You messed up when setting TNT!");
                 block.setType(Material.AIR);
                 Location l = block.getLocation();
-                event.getPlayer().getWorld().createExplosion(l.getX(), l.getY(), l.getZ(), 4F, getConfig().getBoolean("explode-blocks"), getConfig().getBoolean("explode-blocks"));
+                event.getPlayer().getWorld().createExplosion(l.getX(), l.getY(), l.getZ(), 4F, damageBlocks, damageBlocks);
             }
         }
     }
