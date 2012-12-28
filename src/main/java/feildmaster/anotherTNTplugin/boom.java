@@ -1,15 +1,28 @@
 package feildmaster.anotherTNTplugin;
 
-import org.bukkit.event.Event;
+import org.bukkit.GameMode;
+import org.bukkit.Material;
+import org.bukkit.block.Block;
+import org.bukkit.event.*;
+import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class boom extends JavaPlugin {
-    public void onDisable() {
-        getServer().getLogger().info(String.format("[%1$s] Disabled!", getDescription().getName()));
+public class boom extends JavaPlugin implements Listener {
+    public void onEnable() {
+        getServer().getPluginManager().registerEvents(this, this);
     }
 
-    public void onEnable() {
-        getServer().getPluginManager().registerEvent(Event.Type.BLOCK_PLACE, new blockListener(), Event.Priority.Lowest, this);
-        getServer().getLogger().info(String.format("[%1$s] v%2$s Enabled!", getDescription().getName(), getDescription().getVersion()));
+    @EventHandler(priority = EventPriority.LOWEST)
+    public void onBlockPlace(BlockPlaceEvent event) {
+        if(event.getPlayer().getGameMode() == GameMode.CREATIVE || event.getPlayer().isOp()) return;
+
+        Block block = event.getBlock();
+        if(block.getType() == Material.TNT) {
+            if(Math.random() < 0.9) {
+                event.getPlayer().sendMessage("You messed up when setting TNT!");
+                block.setType(Material.AIR);
+                event.getPlayer().getWorld().createExplosion(block.getLocation(), 4F);
+            }
+        }
     }
 }
