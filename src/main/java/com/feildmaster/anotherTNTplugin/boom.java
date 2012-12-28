@@ -1,4 +1,4 @@
-package feildmaster.anotherTNTplugin;
+package com.feildmaster.anotherTNTplugin;
 
 import org.bukkit.GameMode;
 import org.bukkit.Material;

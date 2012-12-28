@@ -1,5 +1,5 @@
 name: BoomTNT
-main: feildmaster.anotherTNTplugin.boom
-version: 1.0
+main: com.feildmaster.anotherTNTplugin.boom
+version: ${version}
 author: feildmaster
 description: I beat all TNT plugins
