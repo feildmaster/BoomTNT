@@ -1,7 +1,6 @@
 package com.feildmaster.anotherTNTplugin;
 
-import org.bukkit.GameMode;
-import org.bukkit.Material;
+import org.bukkit.*;
 import org.bukkit.block.Block;
 import org.bukkit.event.*;
 import org.bukkit.event.block.BlockPlaceEvent;
@@ -21,7 +20,8 @@ public class boom extends JavaPlugin implements Listener {
             if(Math.random() < 0.9) {
                 event.getPlayer().sendMessage("You messed up when setting TNT!");
                 block.setType(Material.AIR);
-                event.getPlayer().getWorld().createExplosion(block.getLocation(), 4F);
+                Location l = block.getLocation();
+                event.getPlayer().getWorld().createExplosion(l.getX(), l.getY(), l.getZ(), 4F, getConfig().getBoolean("explode-blocks"), getConfig().getBoolean("explode-blocks"));
             }
         }
     }
