@@ -6,7 +6,7 @@ import org.bukkit.event.*;
 import org.bukkit.event.block.BlockPlaceEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-public class boom extends JavaPlugin implements Listener {
+public class BoomPlugin extends JavaPlugin implements Listener {
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
     }
