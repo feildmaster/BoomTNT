@@ -13,7 +13,7 @@ public class BoomPlugin extends JavaPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onBlockPlace(BlockPlaceEvent event) {
-        if(event.getPlayer().getGameMode() == GameMode.CREATIVE || event.getPlayer().isOp()) return;
+        if(event.getPlayer().getGameMode() == GameMode.CREATIVE || event.getPlayer().hasPermission("boom.bypass")) return;
 
         Block block = event.getBlock();
         if(block.getType() == Material.TNT) {

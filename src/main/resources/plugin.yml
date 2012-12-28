@@ -3,3 +3,8 @@ main: com.feildmaster.anotherTNTplugin.BoomPlugin
 version: ${version}
 author: feildmaster
 description: I beat all TNT plugins
+
+permissions:
+  boom.bypass:
+    default: op
+    description: Allows players to bypass tnt exploding on them
