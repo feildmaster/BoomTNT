@@ -8,10 +8,12 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 public class BoomPlugin extends JavaPlugin implements Listener {
     private boolean damageBlocks;
+    private boolean creativeBypass;
 
     public void onEnable() {
         getServer().getPluginManager().registerEvents(this, this);
         damageBlocks = getConfig().getBoolean("damage-blocks");
+        creativeBypass = getConfig().getBoolean("creative-bypass");
     }
 
     public void onDisable() {
@@ -20,7 +22,7 @@ public class BoomPlugin extends JavaPlugin implements Listener {
 
     @EventHandler(priority = EventPriority.LOWEST)
     public void onBlockPlace(BlockPlaceEvent event) {
-        if (event.getPlayer().getGameMode() == GameMode.CREATIVE || event.getPlayer().hasPermission("boom.bypass")) {
+        if ((creativeBypass && event.getPlayer().getGameMode() == GameMode.CREATIVE) || event.getPlayer().hasPermission("boom.bypass")) {
             return;
         }
 
